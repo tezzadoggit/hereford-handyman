@@ -1,0 +1,535 @@
+/**
+ * Flooring Service Page
+ * - Laminate, vinyl, parquet restoration, tile flooring, underlay
+ * - SEO targeted: "flooring Hereford", "floor fitter Hereford"
+ * - 7 real photos available from Dean's portfolio
+ */
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import FlooringHead from "@/components/FlooringHead";
+import {
+  BadgeCheck,
+  Check,
+  Clock,
+  Layers,
+  Phone,
+  Ruler,
+  Shield,
+  Sparkles,
+  Square,
+  Star,
+  TreePine,
+} from "lucide-react";
+import { Link } from "wouter";
+
+export default function Flooring() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <FlooringHead />
+      <Header />
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground py-20 lg:py-32">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent font-semibold text-sm mb-6">
+              EXPERT FLOOR FITTING • ALL MATERIALS
+            </div>
+
+            <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Professional Flooring in Hereford
+            </h1>
+
+            <p className="text-xl text-primary-foreground/90 mb-8">
+              Expert floor fitting for laminate, vinyl, parquet, and tile. From herringbone parquet restoration to modern luxury vinyl, we lay floors that last.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6">
+                Get a Free Quote
+              </Button>
+              <Button size="lg" variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold text-lg px-8 py-6">
+                Call 01432 000 000
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals */}
+      <section className="bg-accent/10 py-6 border-y border-accent/20">
+        <div className="container">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-center">
+            <div className="flex items-center space-x-2">
+              <BadgeCheck className="w-5 h-5 text-accent" />
+              <span className="font-semibold">Fully Insured</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-accent" />
+              <span className="font-semibold">Fully Insured</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Star className="w-5 h-5 text-accent fill-accent" />
+              <span className="font-semibold">Local & Trusted</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Clock className="w-5 h-5 text-accent" />
+              <span className="font-semibold">Fixed Rate: £40/hr</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Complete Flooring Services for Every Room
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Whether you need a single room or a whole house, we fit floors with precision and care
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Laminate Flooring */}
+            <Card className="hover:shadow-lg transition-all border-2 border-accent/20">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <Layers className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Laminate Flooring</h3>
+                <p className="text-muted-foreground mb-4">
+                  Hard-wearing laminate flooring fitted with precision. Ideal for living rooms, hallways, and bedrooms. Underlay included for a solid, quiet finish.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Click-lock laminate fitting
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Underlay installation
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Beading & threshold strips
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Subfloor preparation
+                  </li>
+                </ul>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-accent">[PLACEHOLDER IMAGE: Laminate flooring - oak-effect living room]</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Luxury Vinyl (LVT) */}
+            <Card className="hover:shadow-lg transition-all border-2 border-accent/20">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <Square className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Luxury Vinyl Tile (LVT)</h3>
+                <p className="text-muted-foreground mb-4">
+                  Waterproof luxury vinyl tile and plank flooring, perfect for kitchens, bathrooms, and high-traffic areas. Realistic wood and stone effects.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    LVT plank fitting
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Herringbone LVT patterns
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Waterproof for wet rooms
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Karndean & Amtico fitting
+                  </li>
+                </ul>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-accent">[PLACEHOLDER IMAGE: LVT herringbone flooring]</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Parquet Restoration */}
+            <Card className="hover:shadow-lg transition-all border-2 border-accent/20">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <Sparkles className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Parquet Restoration</h3>
+                <p className="text-muted-foreground mb-4">
+                  Bring original parquet floors back to life. Many Hereford homes have beautiful herringbone parquet hidden under old carpet -- we can restore them.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Block replacement & repair
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Sanding & refinishing
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Staining & colour matching
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Lacquer & oil finishing
+                  </li>
+                </ul>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-accent">[PLACEHOLDER IMAGE: Restored herringbone parquet floor]</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Tile Flooring */}
+            <Card className="hover:shadow-lg transition-all border-2 border-accent/20">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <Ruler className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Tile Flooring</h3>
+                <p className="text-muted-foreground mb-4">
+                  Ceramic and porcelain floor tiles for kitchens, bathrooms, hallways, and conservatories. Properly levelled and grouted for a lasting finish.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Porcelain floor tiles
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Ceramic floor tiles
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Self-levelling compound
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Underfloor heating compatible
+                  </li>
+                </ul>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-accent">[PLACEHOLDER IMAGE: Porcelain floor tiles - kitchen]</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Engineered Wood */}
+            <Card className="hover:shadow-lg transition-all border-2 border-accent/20">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <TreePine className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Engineered Wood Flooring</h3>
+                <p className="text-muted-foreground mb-4">
+                  Real wood engineered flooring for the authentic look and feel of hardwood with better stability. Ideal for Herefordshire's variable climate.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Floating or glued installation
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Oak, walnut & ash options
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Herringbone & chevron patterns
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Underfloor heating compatible
+                  </li>
+                </ul>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-accent">[PLACEHOLDER IMAGE: Engineered oak herringbone floor]</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Carpet & Underlay */}
+            <Card className="hover:shadow-lg transition-all border-2 border-accent/20">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                  <Layers className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Subfloor & Underlay</h3>
+                <p className="text-muted-foreground mb-4">
+                  Proper preparation is key to a quality floor. We level subfloors, fit underlay, and address damp or uneven surfaces before laying your new floor.
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Subfloor levelling
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    DPM installation
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Quality underlay fitting
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Old floor removal
+                  </li>
+                </ul>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <p className="text-sm font-semibold text-accent">[PLACEHOLDER IMAGE: Subfloor preparation work]</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 bg-gradient-to-br from-accent/5 to-accent/10">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Why Choose Hereford Handyman for Flooring?
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Precision fitting that makes all the difference
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Ruler className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Precision Cuts</h3>
+                <p className="text-muted-foreground">
+                  Tight joints, clean edges, and perfectly scribed cuts around pipes and door frames. The details that separate a professional job from a DIY attempt.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Layers className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Proper Preparation</h3>
+                <p className="text-muted-foreground">
+                  We never skip subfloor preparation. Levelling, damp proofing, and quality underlay ensure your new floor stays flat and quiet for years.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Fixed-Rate Pricing</h3>
+                <p className="text-muted-foreground">
+                  £40/hr with a clear estimate before we start. No hidden costs for extra cuts, waste disposal, or finishing touches -- they're all included.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Recent Flooring Projects in Hereford
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Real installations from homes across Herefordshire
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { title: "Herringbone Parquet Restoration", desc: "1960s parquet floor restored from under carpet in a Tupsley bungalow", area: "Tupsley, HR1" },
+              { title: "LVT Kitchen & Hallway", desc: "Karndean luxury vinyl in herringbone pattern through open-plan kitchen", area: "Whitecross, HR4" },
+              { title: "Laminate Whole House", desc: "Oak-effect laminate fitted throughout 3-bed semi including stairs", area: "Belmont, HR2" },
+              { title: "Bathroom Tile Floor", desc: "Large format porcelain tiles on levelled bathroom floor", area: "Holmer, HR1" },
+              { title: "Engineered Oak Flooring", desc: "Brushed and oiled engineered oak in living room and dining room", area: "Kings Acre, HR4" },
+              { title: "Parquet Block Repair", desc: "Replaced missing blocks and refinished original 1970s parquet", area: "Bobblestock, HR4" },
+            ].map((project, i) => (
+              <Card key={i} className="hover:shadow-xl transition-all">
+                <CardContent className="p-4">
+                  <div className="bg-muted/50 rounded-lg p-8 mb-4 flex items-center justify-center min-h-[200px]">
+                    <p className="text-sm font-semibold text-muted-foreground text-center">
+                      [PLACEHOLDER: {project.title} Photo]
+                    </p>
+                  </div>
+                  <h4 className="font-bold mb-1">{project.title}</h4>
+                  <p className="text-sm text-muted-foreground mb-2">{project.desc}</p>
+                  <p className="text-xs font-semibold text-accent">{project.area}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+                Flooring FAQs
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Common questions about floor fitting in Hereford
+              </p>
+            </div>
+
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="text-left text-base font-semibold">
+                  How much does it cost to fit flooring in Hereford?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  At our £40/hr rate, fitting laminate or LVT in a standard room (4m x 4m) typically takes 4-6 hours including underlay, cutting, and finishing. More complex patterns like herringbone take longer. Materials are separate and we can advise on the best options for your budget.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2">
+                <AccordionTrigger className="text-left text-base font-semibold">
+                  Can you restore my old parquet floor?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Many older Hereford properties have beautiful parquet hiding under carpet or lino. We can assess the condition, replace damaged blocks, sand the surface smooth, and apply stain and lacquer or oil finish. The results are stunning and far cheaper than new solid wood.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3">
+                <AccordionTrigger className="text-left text-base font-semibold">
+                  What's better: laminate, LVT, or engineered wood?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  It depends on the room and your budget. Laminate is great value for bedrooms and living areas. LVT is waterproof and ideal for kitchens and bathrooms. Engineered wood gives you real timber beauty with better stability than solid wood. We're happy to advise on the best choice for each room.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left text-base font-semibold">
+                  Do you remove old flooring?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes, we handle the complete process including removing old flooring, disposing of waste responsibly, preparing the subfloor, and fitting the new floor. We leave the room completely finished with beading, threshold strips, and a thorough cleanup.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
+                <AccordionTrigger className="text-left text-base font-semibold">
+                  Can you fit flooring around underfloor heating?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Yes, we have experience fitting flooring over both electric and water underfloor heating systems. We use compatible materials and adhesives, follow manufacturer guidelines for expansion gaps, and ensure proper heat distribution. LVT, engineered wood, and tile are all suitable options.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-12 bg-background">
+        <div className="container">
+          <h3 className="text-2xl font-bold text-center mb-8">Related Services You Might Need</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/painting-decorating">
+              <Button variant="outline" className="border-accent/30 hover:bg-accent/10">Painting & Decorating</Button>
+            </Link>
+            <Link href="/carpentry">
+              <Button variant="outline" className="border-accent/30 hover:bg-accent/10">Carpentry & Joinery</Button>
+            </Link>
+            <Link href="/bathroom-renovations">
+              <Button variant="outline" className="border-accent/30 hover:bg-accent/10">Bathroom Renovations</Button>
+            </Link>
+            <Link href="/kitchen-fitting">
+              <Button variant="outline" className="border-accent/30 hover:bg-accent/10">Kitchen Fitting</Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Ready for Beautiful New Floors?
+            </h2>
+            <p className="text-xl mb-8 text-primary-foreground/90">
+              Get a free, no-obligation quote for your flooring project
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              <Card className="bg-background/95">
+                <CardContent className="p-6">
+                  <form className="space-y-4">
+                    <div>
+                      <Label htmlFor="name">Your Name</Label>
+                      <Input id="name" placeholder="John Smith" />
+                    </div>
+                    <div>
+                      <Label htmlFor="phone">Phone Number</Label>
+                      <Input id="phone" type="tel" placeholder="01432 000 000" />
+                    </div>
+                    <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+                      Get Free Quote
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+              <Card className="bg-background/95">
+                <CardContent className="p-6 flex flex-col justify-center items-center h-full">
+                  <Phone className="w-12 h-12 text-accent mb-4" />
+                  <h3 className="text-xl font-bold text-foreground mb-2">Prefer to Call?</h3>
+                  <a href="tel:01432000000" className="text-2xl font-bold text-primary hover:underline mb-2">
+                    01432 000 000
+                  </a>
+                  <p className="text-sm text-muted-foreground">Mon-Sat 8am-6pm</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

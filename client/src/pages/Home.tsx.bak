@@ -1,0 +1,574 @@
+/**
+ * Design Philosophy: Modern Professional with Trust-Building
+ * - Split-screen hero (headline left, booking form right)
+ * - Asymmetric service grid avoiding centered monotony
+ * - Trust signals prominently displayed
+ * - Fixed-rate pricing transparency
+ */
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import {
+  BadgeCheck,
+  Calendar,
+  Check,
+  Clock,
+  CreditCard,
+  Hammer,
+  Home as HomeIcon,
+  Lightbulb,
+  Shield,
+  Sparkles,
+  Star,
+  Users,
+  Wrench,
+  Zap,
+} from "lucide-react";
+import { Link } from "wouter";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+
+      {/* Hero Section - Split Screen */}
+      <section className="relative bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMS4xMDUuODk1LTIgMi0yaDRjMS4xMDUgMCAyIC44OTUgMiAydjRjMCAxLjEwNS0uODk1IDItMiAyaC00Yy0xLjEwNSAwLTItLjg5NS0yLTJ2LTR6bS0yMCAwYzAtMS4xMDUuODk1LTIgMi0yaDRjMS4xMDUgMCAyIC44OTUgMiAydjRjMCAxLjEwNS0uODk1IDItMiAyaC00Yy0xLjEwNSAwLTItLjg5NS0yLTJ2LTR6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-40"></div>
+        
+        <div className="container relative py-20 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Headline & Benefits */}
+            <div className="space-y-8">
+              <div className="inline-block px-4 py-2 bg-accent/20 rounded-full text-accent font-semibold text-sm">
+                ✓ No Call-Out Fees • Fixed Rates • Online Booking
+              </div>
+              
+              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                Reliable Property Maintenance in Hereford: Fixed Rates & Instant Online Booking
+              </h1>
+              
+              <p className="text-xl text-primary-foreground/90">
+                Check price and availability and get your quote easily today!
+              </p>
+
+              <div className="space-y-4">
+                {[
+                  "£40/hr Flat Rate - No Hidden Costs",
+                  "Fully Insured",
+                  "Same & Next-Day Availability",
+                  "Digital Invoicing & Online Payment",
+                ].map((benefit) => (
+                  <div key={benefit} className="flex items-center space-x-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center">
+                      <Check className="w-4 h-4 text-accent" />
+                    </div>
+                    <span className="text-lg">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6">
+                  Book Online Now
+                </Button>
+                <Button size="lg" variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold text-lg px-8 py-6">
+                  View Pricing
+                </Button>
+              </div>
+            </div>
+
+            {/* Right: Quick Quote Form */}
+            <Card className="bg-background/95 backdrop-blur shadow-2xl">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-foreground mb-6">Get Your Free Quote</h3>
+                <form className="space-y-4">
+                  <div>
+                    <Label htmlFor="name">Your Name</Label>
+                    <Input id="name" placeholder="John Smith" />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone">Phone Number</Label>
+                    <Input id="phone" type="tel" placeholder="01432 000 000" />
+                  </div>
+                  <div>
+                    <Label htmlFor="service">Service Needed</Label>
+                    <Input id="service" placeholder="e.g., Grab rail installation" />
+                  </div>
+                  <div>
+                    <Label htmlFor="details">Brief Details</Label>
+                    <Textarea id="details" placeholder="Tell us about your project..." rows={3} />
+                  </div>
+                  <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6">
+                    Get Free Quote
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals Bar */}
+      <section className="bg-accent/10 py-6 border-y border-accent/20">
+        <div className="container">
+          <div className="flex flex-wrap justify-center items-center gap-8 text-center">
+            <div className="flex items-center space-x-2">
+              <Star className="w-5 h-5 text-accent fill-accent" />
+              <span className="font-semibold">4.9/5 Rating</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <BadgeCheck className="w-5 h-5 text-accent" />
+              <span className="font-semibold">Local & Trusted</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-accent" />
+              <span className="font-semibold">Fully Insured</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Clock className="w-5 h-5 text-accent" />
+              <span className="font-semibold">Same-Day Service</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid - Asymmetric Layout */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Our Core Services: From Leaky Taps to Media Walls
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Our multi-skilled handymen handle everything from safety adaptations to smart home installations
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Elderly Home Adaptations - Featured */}
+            <Card className="lg:col-span-2 bg-gradient-to-br from-primary/5 to-accent/5 border-2 border-accent/20 hover:border-accent/40 transition-all hover:shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="p-3 bg-accent/10 rounded-lg">
+                    <HomeIcon className="w-8 h-8 text-accent" />
+                  </div>
+                  <span className="px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full">
+                    POPULAR
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Elderly Home Adaptations</h3>
+                <p className="text-muted-foreground mb-4">
+                  Professional safety installations to help you stay independent in your home
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center text-sm">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Grab rail installation
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Key safe fitting
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Walk-in shower modifications
+                  </li>
+                  <li className="flex items-center text-sm">
+                    <Check className="w-4 h-4 mr-2 text-accent" />
+                    Motion sensor lighting
+                  </li>
+                </ul>
+                <Link href="/elderly-care">
+                  <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                    Learn More
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Media Walls */}
+            <Card className="hover:shadow-lg transition-all border-border hover:border-accent/40">
+              <CardContent className="p-6">
+                <div className="p-3 bg-primary/10 rounded-lg mb-4 w-fit">
+                  <Sparkles className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Media Walls</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Transform your living room with bespoke media wall installations
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Floating TV walls
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Slat wall panels
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Electric fire packages
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Smart Home */}
+            <Card className="hover:shadow-lg transition-all border-border hover:border-accent/40">
+              <CardContent className="p-6">
+                <div className="p-3 bg-primary/10 rounded-lg mb-4 w-fit">
+                  <Zap className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Smart Home Setup</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Professional installation of smart devices and home automation
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Smart thermostats
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Video doorbells
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Smart locks
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Property Maintenance - B2B Focus */}
+            <Card className="lg:col-span-2 bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
+              <CardContent className="p-8">
+                <div className="flex items-start justify-between mb-4">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Users className="w-8 h-8 text-primary" />
+                  </div>
+                  <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-bold rounded-full">
+                    FOR BUSINESS
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Property Maintenance for Landlords & Agents</h3>
+                <p className="text-muted-foreground mb-4">
+                  Priority retainer packages with guaranteed response times and fixed pricing
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="flex items-start">
+                    <Calendar className="w-5 h-5 mr-2 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-sm">48-Hour Guarantee</p>
+                      <p className="text-xs text-muted-foreground">Priority response for retainer clients</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CreditCard className="w-5 h-5 mr-2 text-primary mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-sm">Monthly Invoicing</p>
+                      <p className="text-xs text-muted-foreground">Consolidated billing, no cash</p>
+                    </div>
+                  </div>
+                </div>
+                <Link href="/b2b">
+                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                    View B2B Packages
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* General Repairs */}
+            <Card className="hover:shadow-lg transition-all border-border hover:border-accent/40">
+              <CardContent className="p-6">
+                <div className="p-3 bg-primary/10 rounded-lg mb-4 w-fit">
+                  <Hammer className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">General Repairs</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  All your everyday handyman needs covered
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Painting & decorating
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Furniture assembly
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Door & window repairs
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Electrical */}
+            <Card className="hover:shadow-lg transition-all border-border hover:border-accent/40">
+              <CardContent className="p-6">
+                <div className="p-3 bg-primary/10 rounded-lg mb-4 w-fit">
+                  <Lightbulb className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Electrical Work</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Safe and certified electrical installations
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Light fixture installation
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Socket replacement
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Ceiling fan fitting
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Plumbing */}
+            <Card className="hover:shadow-lg transition-all border-border hover:border-accent/40">
+              <CardContent className="p-6">
+                <div className="p-3 bg-primary/10 rounded-lg mb-4 w-fit">
+                  <Wrench className="w-6 h-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Plumbing Services</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Quick fixes and installations
+                </p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Leak repairs
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Tap replacement
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 mr-2 text-primary" />
+                    Toilet repairs
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Transparency Section */}
+      <section className="py-20 bg-gradient-to-br from-accent/5 to-accent/10">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+              Transparent Pricing: No Estimates, Just Fixed Hourly Rates
+            </h2>
+            <p className="text-xl text-muted-foreground mb-12">
+              Unlike "Old School Dave" or expensive national franchises, we're upfront about our pricing
+            </p>
+
+            <Card className="bg-background shadow-xl border-2 border-accent/20">
+              <CardContent className="p-12">
+                <div className="text-center mb-8">
+                  <div className="inline-block px-6 py-3 bg-accent/10 rounded-full mb-4">
+                    <span className="text-5xl font-bold text-accent">£40</span>
+                    <span className="text-2xl text-muted-foreground">/hour</span>
+                  </div>
+                  <p className="text-lg font-semibold">Flat Rate. No Call-Out Fee.</p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6 text-left">
+                  <div className="flex items-start space-x-3">
+                    <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-semibold">All Labor Included</p>
+                      <p className="text-sm text-muted-foreground">Pay only for time worked</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-semibold">Materials at Cost</p>
+                      <p className="text-sm text-muted-foreground">No markup on supplies</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Check className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <p className="font-semibold">Digital Invoice</p>
+                      <p className="text-sm text-muted-foreground">Emailed after completion</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-border">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    <strong>B2B Retainer Clients:</strong> £35/hr with guaranteed 48-hour response
+                  </p>
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+                    Book Your First Job
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - Comparison */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+              Why Hereford Homeowners Choose Our Digital-First Service
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              We're different from the "phone tag" tradesmen and expensive franchises
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-border">
+                  <th className="text-left p-4 font-bold text-lg">Feature</th>
+                  <th className="text-center p-4 font-bold text-lg bg-accent/10">
+                    <div className="flex flex-col items-center">
+                      <span className="text-accent">Hereford Handyman</span>
+                      <span className="text-xs font-normal text-muted-foreground">(You)</span>
+                    </div>
+                  </th>
+                  <th className="text-center p-4 font-bold text-lg">"Old School" Dave</th>
+                  <th className="text-center p-4 font-bold text-lg">National Franchise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-border">
+                  <td className="p-4 font-medium">Booking Process</td>
+                  <td className="p-4 text-center bg-accent/5">
+                    <span className="text-accent font-semibold">Instant Online Booking (24/7)</span>
+                  </td>
+                  <td className="p-4 text-center text-muted-foreground">Phone tag & voicemail</td>
+                  <td className="p-4 text-center text-muted-foreground">Call center queues</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-4 font-medium">Pricing Model</td>
+                  <td className="p-4 text-center bg-accent/5">
+                    <span className="text-accent font-semibold">Fixed Prices listed online</span>
+                  </td>
+                  <td className="p-4 text-center text-muted-foreground">"I'll come round and give you a quote"</td>
+                  <td className="p-4 text-center text-muted-foreground">High call-out fees + hidden costs</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-4 font-medium">Response Time</td>
+                  <td className="p-4 text-center bg-accent/5">
+                    <span className="text-accent font-semibold">Guaranteed slots selected by user</span>
+                  </td>
+                  <td className="p-4 text-center text-muted-foreground">"I'll try to pop in next Tuesday"</td>
+                  <td className="p-4 text-center text-muted-foreground">1-2 week lead times</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-4 font-medium">Invoicing</td>
+                  <td className="p-4 text-center bg-accent/5">
+                    <span className="text-accent font-semibold">Digital Invoicing (Email/Text)</span>
+                  </td>
+                  <td className="p-4 text-center text-muted-foreground">Cash in hand / crumpled paper</td>
+                  <td className="p-4 text-center text-muted-foreground">Impersonal corporate billing</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="p-4 font-medium">B2B Service</td>
+                  <td className="p-4 text-center bg-accent/5">
+                    <span className="text-accent font-semibold">Retainer Priority (£200/mo guarantee)</span>
+                  </td>
+                  <td className="p-4 text-center text-muted-foreground">First come, first served</td>
+                  <td className="p-4 text-center text-muted-foreground">Expensive corporate contracts</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-medium">Trust Factor</td>
+                  <td className="p-4 text-center bg-accent/5">
+                    <span className="text-accent font-semibold">Professional & Uniformed</span>
+                  </td>
+                  <td className="p-4 text-center text-muted-foreground">Variable / Unknown</td>
+                  <td className="p-4 text-center text-muted-foreground">High turnover of staff</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Gallery */}
+      <section className="py-20 bg-background">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Our Recent Work</h2>
+            <p className="text-xl text-muted-foreground">
+              Professional results across Hereford and surrounding areas
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { src: '/images/portfolio/hero-01-bedroom-blue-panels.jpg', title: 'Bedroom Transformation', category: 'Painting & Decorating' },
+              { src: '/images/portfolio/hero-03-bathroom-blue.jpg', title: 'Modern Bathroom', category: 'Bathroom Renovations' },
+              { src: '/images/portfolio/hero-07-parquet-floor.jpg', title: 'Parquet Flooring', category: 'Flooring' },
+              { src: '/images/portfolio/hero-06-wallpaper-floral.jpg', title: 'Wallpaper Installation', category: 'Decorating' },
+              { src: '/images/portfolio/hero-05-kitchen-navy.jpg', title: 'Kitchen Fitting', category: 'Kitchen Work' },
+              { src: '/images/portfolio/hero-08-period-beams.jpg', title: 'Period Property', category: 'Renovation' },
+            ].map((photo, idx) => (
+              <Card key={idx} className="overflow-hidden hover:shadow-xl transition-all">
+                <img
+                  src={photo.src}
+                  alt={photo.title}
+                  className="w-full h-64 object-cover"
+                  loading="lazy"
+                />
+                <CardContent className="p-4">
+                  <p className="text-sm text-accent font-semibold mb-1">{photo.category}</p>
+                  <h3 className="font-bold">{photo.title}</h3>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground">
+        <div className="container text-center">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
+            Book online in 60 seconds or call us for a free quote
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-lg px-8 py-6">
+              Book Online Now
+            </Button>
+            <Button size="lg" variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold text-lg px-8 py-6">
+              Call 01432 000 000
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

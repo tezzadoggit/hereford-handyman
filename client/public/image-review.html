@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hereford Handyman - Image Review Board</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; padding: 20px; }
+  h1 { color: #f59e0b; margin-bottom: 8px; font-size: 28px; }
+  .subtitle { color: #94a3b8; margin-bottom: 24px; font-size: 14px; }
+  .stats { display: flex; gap: 16px; margin-bottom: 24px; }
+  .stat { background: #1e293b; padding: 12px 20px; border-radius: 8px; border-left: 3px solid; }
+  .stat.approved { border-color: #22c55e; }
+  .stat.todo { border-color: #f59e0b; }
+  .stat.total { border-color: #3b82f6; }
+  .stat-num { font-size: 24px; font-weight: 700; }
+  .stat-label { font-size: 12px; color: #94a3b8; }
+  .section { margin-bottom: 32px; }
+  .section h2 { color: #f59e0b; font-size: 18px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #334155; }
+  .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 16px; border: 1px solid #334155; }
+  .card.approved { border-color: #22c55e; }
+  .card.todo { border-color: #f59e0b; }
+  .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .card-title { font-size: 16px; font-weight: 600; }
+  .badge { padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+  .badge.approved { background: #22c55e20; color: #22c55e; }
+  .badge.todo { background: #f59e0b20; color: #f59e0b; }
+  .filename { font-family: monospace; font-size: 13px; color: #60a5fa; background: #0f172a; padding: 4px 8px; border-radius: 4px; margin-bottom: 12px; display: inline-block; }
+  .prompt-box { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px; margin-top: 12px; }
+  .prompt-label { font-size: 11px; color: #f59e0b; text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+  .prompt-text { font-size: 13px; line-height: 1.6; color: #cbd5e1; white-space: pre-wrap; }
+  .copy-btn { background: #334155; color: #e2e8f0; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; margin-top: 8px; }
+  .copy-btn:hover { background: #475569; }
+  .copy-btn.copied { background: #22c55e; color: #0f172a; }
+  .placement { font-size: 12px; color: #94a3b8; margin-top: 8px; }
+  .watermark-tip { background: #1e293b; border: 1px solid #f59e0b40; border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+  .watermark-tip h3 { color: #f59e0b; font-size: 14px; margin-bottom: 8px; }
+  .watermark-tip code { background: #0f172a; padding: 2px 6px; border-radius: 4px; font-size: 12px; color: #60a5fa; }
+  .num { display: inline-block; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; background: #334155; font-size: 12px; font-weight: 700; margin-right: 8px; }
+  .card.approved .num { background: #22c55e30; color: #22c55e; }
+  .card.todo .num { background: #f59e0b30; color: #f59e0b; }
+</style>
+</head>
+<body>
+
+<h1>Hereford Handyman - Image Review Board</h1>
+<p class="subtitle">Generate as 2x2 grids, pick the best, then do final 4K render. Add the anti-watermark suffix to every prompt.</p>
+
+<div class="stats">
+  <div class="stat approved"><div class="stat-num">3</div><div class="stat-label">Approved</div></div>
+  <div class="stat todo"><div class="stat-num">12</div><div class="stat-label">Need Generating</div></div>
+  <div class="stat total"><div class="stat-num">15</div><div class="stat-label">Total Required</div></div>
+</div>
+
+<div class="watermark-tip">
+  <h3>Anti-Watermark Prompt Suffix</h3>
+  <p style="font-size:13px; margin-bottom:8px;">Append this to EVERY prompt to avoid visible watermarks:</p>
+  <code>Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</code>
+  <button class="copy-btn" onclick="copyText(this, 'Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial')">Copy suffix</button>
+</div>
+
+<!-- ========== APPROVED ========== -->
+<div class="section">
+  <h2>APPROVED (3/15)</h2>
+
+  <div class="card approved">
+    <div class="card-header">
+      <div class="card-title"><span class="num">3</span>Outdoor Motion Sensor Light</div>
+      <span class="badge approved">Approved</span>
+    </div>
+    <div class="filename">motion-sensor-light-installation-hereford-elderly.jpg</div>
+    <div class="placement">Elderly Care page - Outdoor Mobility Solutions card</div>
+  </div>
+
+  <div class="card approved">
+    <div class="card-header">
+      <div class="card-title"><span class="num">5</span>Ring Video Doorbell (Elderly)</div>
+      <span class="badge approved">Approved</span>
+    </div>
+    <div class="filename">ring-doorbell-installation-hereford-elderly-home.jpg</div>
+    <div class="placement">Elderly Care page - Smart Safety Technology card</div>
+  </div>
+
+  <div class="card approved">
+    <div class="card-header">
+      <div class="card-title"><span class="num">6</span>Lever Door Handle (Arthritis-Friendly)</div>
+      <span class="badge approved">Approved</span>
+    </div>
+    <div class="filename">lever-door-handle-hereford-arthritis-friendly.jpg</div>
+    <div class="placement">Elderly Care page - Door & Window Ease card</div>
+  </div>
+</div>
+
+<!-- ========== ELDERLY CARE - NEED GENERATING ========== -->
+<div class="section">
+  <h2>ELDERLY CARE / HOME ADAPTATIONS - Need Generating</h2>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">1</span>Grab Rail Installation (Hero)</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">grab-rail-installation-hereford-bathroom.jpg</div>
+    <div class="placement">Elderly Care page - Grab Rail Installation card (HERO IMAGE)</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A professional handyman installing a chrome grab rail next to a white bathtub in a bright, clean modern bathroom. The handyman is wearing a navy blue uniform with "Hereford Handyman" branding. Natural daylight streaming through frosted window. The grab rail is being securely mounted to the tiled wall. Close-up shot showing the installation process with a drill and wall anchors visible. Warm, reassuring atmosphere. Professional trade photography style. High detail, photorealistic.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">2</span>Key Safe Installation</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">key-safe-installation-hereford-exterior.jpg</div>
+    <div class="placement">Elderly Care page - Key Safe Installation card</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A weatherproof metal key safe box securely mounted on a red brick exterior wall next to a front door. The key safe is modern, brushed steel finish, with a digital keypad. A handyman's hand is shown securing the final mounting screw with a drill. Traditional Herefordshire brick house exterior visible in background. Soft natural daylight. Professional installation photography. Clean, trustworthy aesthetic. Photorealistic, high resolution.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">4</span>Walk-in Shower / Bathroom Modifications</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">walk-in-shower-seat-hereford-elderly-bathroom.jpg</div>
+    <div class="placement">Elderly Care page - Bathroom Modifications card</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A modern walk-in shower with a fold-down shower seat and chrome grab rails installed. White tiled bathroom with non-slip flooring. The shower area is spacious, accessible, with no threshold. Warm lighting, clean and bright. Safety features prominently visible: grab rails on both sides, fold-down seat, handheld shower head. Professional bathroom photography. Reassuring, safe atmosphere. Photorealistic, high detail.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MEDIA WALLS - NEED GENERATING ========== -->
+<div class="section">
+  <h2>MEDIA WALLS - Need Generating</h2>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">7</span>Floating TV Wall (Hero)</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">floating-tv-wall-installation-hereford-modern.jpg</div>
+    <div class="placement">Media Walls page - Floating TV Walls card (HERO IMAGE)</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A stunning modern living room with a large 65-inch TV mounted on a dark feature wall with hidden cables. The TV appears to float with subtle LED backlighting creating a blue-purple glow behind it. Minimalist floating shelves beneath the TV hold a soundbar and decorative items. The wall is painted dark charcoal gray. Contemporary furniture visible: gray sofa, wooden coffee table. Evening ambiance with soft lighting. High-end interior design photography. Photorealistic, cinematic quality.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">8</span>Electric Fire & TV Package</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">electric-fire-tv-package-hereford-media-wall.jpg</div>
+    <div class="placement">Media Walls page - Electric Fire & TV Packages card</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A luxurious media wall featuring a large wall-mounted TV above a modern electric fireplace with realistic flame effects. The fireplace is built into a dark wood paneled wall. The flames glow orange and amber. TV is mounted at optimal viewing height above the fire. The room is cozy, contemporary, with soft ambient lighting. Gray sofa visible in foreground. Evening setting. High-end interior design photography. Warm, inviting atmosphere. Photorealistic, cinematic.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">9</span>Acoustic Slat Wall Panels</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">acoustic-slat-wall-panels-hereford-media-wall.jpg</div>
+    <div class="placement">Media Walls page - Acoustic Slat Wall Panels section</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A contemporary living room feature wall covered in vertical wooden slat panels (light oak finish) with a TV integrated into the design. The slats create beautiful texture and depth. LED strip lighting hidden behind the slats creates a warm glow. The TV is flush-mounted within the slat wall. Modern, Scandinavian-inspired interior. Clean lines, minimalist aesthetic. Professional interior design photography. Natural daylight from side window. Photorealistic, high detail.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">10</span>Cable Management (Behind-the-Scenes)</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">cable-management-media-wall-hereford-professional.jpg</div>
+    <div class="placement">Media Walls page - Why Hire a Pro section</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">Behind-the-scenes view of professional cable management for a media wall installation. Cables neatly routed through in-wall conduits and cable management channels. A handyman in navy uniform organizing HDMI cables, power cables, and ethernet cables within a wall cavity. Cable ties and labels visible. Professional, organized installation work. Clean, technical photography. Bright workshop lighting. Shows the craftsmanship behind the finished product. Photorealistic, documentary style.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">11</span>Portfolio - Modern Minimalist</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">media-wall-portfolio-hereford-minimalist-1.jpg</div>
+    <div class="placement">Media Walls page - Portfolio section (Example 1)</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A completed media wall installation in a modern Hereford home. Large TV mounted on a white wall with floating white shelves on either side. Minimalist design with hidden cables. Small decorative plants and books on shelves. Soft gray sofa in foreground. Natural daylight from large window. Clean, bright, Scandinavian aesthetic. Professional interior photography. Photorealistic, well-lit.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">12</span>Portfolio - Industrial Style</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">media-wall-portfolio-hereford-industrial-2.jpg</div>
+    <div class="placement">Media Walls page - Portfolio section (Example 2)</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">An industrial-style media wall in a Hereford loft conversion. Exposed red brick wall with a large TV mounted on a black metal frame. Floating wooden shelves made from reclaimed wood. Edison bulb pendant lights hanging nearby. Leather sofa visible. Warm, moody lighting. Urban loft aesthetic. Professional interior photography. Photorealistic, atmospheric.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SMART HOME - NEED GENERATING ========== -->
+<div class="section">
+  <h2>SMART HOME - Need Generating</h2>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">13</span>Nest Thermostat Installation</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">nest-thermostat-installation-hereford-smart-home.jpg</div>
+    <div class="placement">Media Walls page - Smart Home Setup section (Smart Thermostats card)</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A Google Nest Learning Thermostat mounted on a clean white wall in a modern hallway. The thermostat display shows 21 degrees with a blue ring. A handyman's hand is shown making final adjustments. Clean, minimal aesthetic. Soft natural lighting. The thermostat is perfectly level and professionally installed. Professional product installation photography. Photorealistic, high detail.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">14</span>Video Doorbell (Smart Home)</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">video-doorbell-installation-hereford-smart-home.jpg</div>
+    <div class="placement">Media Walls page - Smart Home Setup section (Video Doorbells card)</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A Ring Video Doorbell Pro mounted on a modern front door frame. Contemporary house exterior with clean lines. The doorbell is sleek, black, with visible camera lens. A smartphone in the foreground displays the Ring app showing a live video feed. Daylight setting. Professional, secure installation. Modern home security aesthetic. Professional product photography. Photorealistic.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+
+  <div class="card todo">
+    <div class="card-header">
+      <div class="card-title"><span class="num">15</span>Home Cinema Setup</div>
+      <span class="badge todo">Generate</span>
+    </div>
+    <div class="filename">home-cinema-installation-hereford-surround-sound.jpg</div>
+    <div class="placement">Media Walls page - Smart Home Setup section (Home Cinema card)</div>
+    <div class="prompt-box">
+      <div class="prompt-label">Generation Prompt</div>
+      <div class="prompt-text">A dedicated home cinema room with a large projector screen on the wall, surround sound speakers mounted in corners, and comfortable reclining chairs. Dark walls, ambient LED strip lighting around the ceiling. Professional cable management visible. The screen shows a movie scene. Cozy, immersive atmosphere. Evening setting with soft lighting. High-end home cinema photography. Photorealistic, cinematic quality.
+
+Avoid: blurry, low quality, distorted, watermark, text, signature, copyright mark, stock photo look, oversaturated, artificial</div>
+      <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function copyPrompt(btn) {
+  const text = btn.previousElementSibling.textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy prompt'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy suffix'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
