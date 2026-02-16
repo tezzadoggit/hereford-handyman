@@ -196,7 +196,7 @@ export default function Home() {
                         alert('Quote request sent! We will be in touch shortly.');
                         form.reset();
                       } else {
-                        alert('Failed to send: ' + result.message);
+                        alert(`Failed to send: ${result.message} (${result.error || 'Unknown error'})`);
                       }
                     })
                     .catch((err) => {
