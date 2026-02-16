@@ -137,7 +137,12 @@ export default function PaintingDecorating() {
                   </li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-border">
-                  <img src="/images/deans-work/teal-bedroom-wide.jpg" alt="Professionally painted teal bedroom in Hereford" className="rounded-lg w-full h-40 object-cover" />
+                  <img
+                    src="/images/deans-work/teal-bedroom-wide.jpg"
+                    alt="Professionally painted teal bedroom in Hereford"
+                    className="rounded-lg w-full h-64 object-cover"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -171,7 +176,12 @@ export default function PaintingDecorating() {
                   </li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-border">
-                  <img src="/images/deans-work/white-hallway-landing.jpg" alt="Freshly painted white hallway by Hereford Handyman" className="rounded-lg w-full h-40 object-cover" />
+                  <img
+                    src="/images/deans-work/white-hallway-landing.jpg"
+                    alt="Freshly painted white hallway by Hereford Handyman"
+                    className="rounded-lg w-full h-64 object-cover"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -205,7 +215,12 @@ export default function PaintingDecorating() {
                   </li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-border">
-                  <img src="/images/deans-work/floral-wallpaper-hallway.jpg" alt="Floral wallpaper feature wall hung by Hereford Handyman" className="rounded-lg w-full h-40 object-cover" />
+                  <img
+                    src="/images/deans-work/floral-wallpaper-hallway.jpg"
+                    alt="Floral wallpaper feature wall hung by Hereford Handyman"
+                    className="rounded-lg w-full h-64 object-cover"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -239,7 +254,12 @@ export default function PaintingDecorating() {
                   </li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-border">
-                  <img src="/images/deans-work/blue-panelled-bedroom.jpg" alt="Blue panelled bedroom with decorative wall panelling" className="rounded-lg w-full h-40 object-cover" />
+                  <img
+                    src="/images/deans-work/blue-panelled-bedroom.jpg"
+                    alt="Blue panelled bedroom with decorative wall panelling"
+                    className="rounded-lg w-full h-64 object-cover"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -273,7 +293,12 @@ export default function PaintingDecorating() {
                   </li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-border">
-                  <img src="/images/deans-work/wallpaper-bedroom.jpg" alt="Coral bedroom with carefully chosen colour palette" className="rounded-lg w-full h-40 object-cover" />
+                  <img
+                    src="/images/deans-work/wallpaper-bedroom.jpg"
+                    alt="Coral bedroom with carefully chosen colour palette"
+                    className="rounded-lg w-full h-64 object-cover"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -307,7 +332,12 @@ export default function PaintingDecorating() {
                   </li>
                 </ul>
                 <div className="mt-4 pt-4 border-t border-border">
-                  <img src="/images/deans-work/period-property-renovation.jpg" alt="Period room renovation with exposed beams in Hereford" className="rounded-lg w-full h-40 object-cover" />
+                  <img
+                    src="/images/deans-work/period-property-renovation.jpg"
+                    alt="Period room renovation with exposed beams in Hereford"
+                    className="rounded-lg w-full h-64 object-cover"
+                    style={{ objectFit: 'cover' }}
+                  />
                 </div>
               </CardContent>
             </Card>
