@@ -25,11 +25,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     const mailOptions = {
-    // This is the 'Label' people see. It now uses a separate variable.
+    // This is the 'Label' people see. It now pulls from your Vercel 'MAIL_FROM' key.
     from: process.env.MAIL_FROM, 
     
-    // This is where the notification goes (Your Hereford inbox)
-    to: 'dean@herefordhandyman.co.uk', 
+    // This is where the notification goes (your personal admin inbox)
+    to: 'admin@bluedragonbreath.works', 
     
     subject: `New Quote Request from ${name}`,
     text: `
