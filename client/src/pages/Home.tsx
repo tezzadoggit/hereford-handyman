@@ -169,26 +169,66 @@ export default function Home() {
               </div>
 
               <div className="p-10 lg:p-12">
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget;
+                  const data = {
+                    name: (form.elements.namedItem('name') as HTMLInputElement).value,
+                    phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
+                    service: (form.elements.namedItem('service') as HTMLInputElement).value,
+                    details: (form.elements.namedItem('details') as HTMLTextAreaElement).value,
+                  };
+
+                  const submitBtn = form.querySelector('button[type="submit"]');
+                  if (submitBtn) {
+                    submitBtn.textContent = 'Sending...';
+                    submitBtn.setAttribute('disabled', 'true');
+                  }
+
+                  fetch('/api/send-quote', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                  })
+                    .then(async (res) => {
+                      const result = await res.json();
+                      if (res.ok) {
+                        alert('Quote request sent! We will be in touch shortly.');
+                        form.reset();
+                      } else {
+                        alert('Failed to send: ' + result.message);
+                      }
+                    })
+                    .catch((err) => {
+                      alert('Error sending quote. Please try again or call us.');
+                      console.error(err);
+                    })
+                    .finally(() => {
+                      if (submitBtn) {
+                        submitBtn.textContent = 'Get Quick Quote';
+                        submitBtn.removeAttribute('disabled');
+                      }
+                    });
+                }}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="font-bold">Name</Label>
-                      <Input id="name" placeholder="John Smith" />
+                      <Input id="name" name="name" placeholder="John Smith" required />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone" className="font-bold">Phone</Label>
-                      <Input id="phone" type="tel" placeholder="07xxx xxx xxx" />
+                      <Input id="phone" name="phone" type="tel" placeholder="07xxx xxx xxx" required />
                     </div>
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="service" className="font-bold">Service Required</Label>
-                    <Input id="service" placeholder="e.g. Painting, Plumbing, Carpentry..." />
+                    <Input id="service" name="service" placeholder="e.g. Painting, Plumbing, Carpentry..." />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="details" className="font-bold">Project Details</Label>
-                    <Textarea id="details" placeholder="Tell us a bit more about what you need done..." rows={3} />
+                    <Textarea id="details" name="details" placeholder="Tell us a bit more about what you need done..." rows={3} />
                   </div>
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black py-6 text-lg uppercase tracking-wide shadow-lg shadow-primary/20">
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black py-6 text-lg uppercase tracking-wide shadow-lg shadow-primary/20">
                     Get Quick Quote
                   </Button>
 
