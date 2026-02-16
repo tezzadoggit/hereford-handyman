@@ -25,10 +25,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     });
 
     const mailOptions = {
-        from: process.env.GMAIL_USER,
-        to: process.env.GMAIL_USER, // Send to self
-        subject: `New Quote Request from ${name}`,
-        text: `
+    // This is the 'Label' people see. It now uses a separate variable.
+    from: process.env.MAIL_FROM, 
+    
+    // This is where the notification goes (Your Hereford inbox)
+    to: 'dean@herefordhandyman.co.uk', 
+    
+    subject: `New Quote Request from ${name}`,
+    text: `
       New Handyman Quote Request:
       ---------------------------
       Name: ${name}
